@@ -29,4 +29,11 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function() {
 
 Route::group(['prefix' => 'products', 'middleware' => 'auth'], function() {
     Route::get('/', [ProductController::class, 'index'])->name('products');
+    
+    Route::get('/create', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/store', [ProductController::class, 'store'])->name('products.store');
+    Route::get('/edit/{id}', [ProductController::class, 'edit'])->name('products.edit');
+    Route::post('/update', [ProductController::class, 'update'])->name('products.update');
+
+    Route::post('/list', [ProductController::class, 'list']);
 });
