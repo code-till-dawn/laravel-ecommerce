@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +38,8 @@ Route::group(['prefix' => 'products', 'middleware' => 'auth'], function() {
     Route::post('/update', [ProductController::class, 'update'])->name('products.update');
 
     Route::post('/list', [ProductController::class, 'list']);
+});
+
+Route::group(['prefix' => 'brands', 'middleware' => 'auth'], function(){
+    Route::get('/', [BrandController::class, 'index'])->name('brands');
 });

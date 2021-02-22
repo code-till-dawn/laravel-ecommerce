@@ -25,6 +25,12 @@
         <span>Products</span></a>
 </li>
 
+<li class="nav-item active">
+    <a class="nav-link" href="{{ route('brands') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Brands</span></a>
+</li>
+
 
 <!-- Nav Item - Pages Collapse Menu -->
 <!-- <li class="nav-item">
